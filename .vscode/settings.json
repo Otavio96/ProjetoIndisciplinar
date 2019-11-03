@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "database": "./ProjetoIndisciplinar/foodwastecontrol/db.sqlite3",
+            "dialect": "SQLite",
+            "name": "teste"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
