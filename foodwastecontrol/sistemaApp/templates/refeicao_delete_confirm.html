@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <h1>Tem certeza que deseja deletar {{person}}?</h1>
+    <h1>Tem certeza que deseja deletar {{id}}?</h1>
     <form method="POST">
         {% csrf_token %}
         <button type="submit">Delete</button>
