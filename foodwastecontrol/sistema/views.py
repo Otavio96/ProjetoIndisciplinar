@@ -13,4 +13,3 @@ def cadastrar_empresas(request):
 def visualizar_empresas(request):
     empresas = Empresa.objects.all()
     return render(request, 'visualizar_empresa.html', {'empresas': empresas})
-    
