@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 { load bootstrap }
 
-{% block title %}Lista de Livros{% endblock %}
+{% block title %}Lista de Usuario{% endblock %}
 
 {% block conteudo %}
 
@@ -16,8 +16,6 @@
                 <thead>
                     <tr>
                         <th>Nome Completo</th>
-                        <th>Numero Cracha</th>
-                        <th>Senha</th>
                         <th>Ação</th>
                     </tr>
                 </thead>
@@ -25,15 +23,12 @@
 
                     {% for usuario in usuarios %}
                     <tr>
-                        <td>{{ usuario.nome_completo }}</td>
-                        <td>{{ usuario.numero_cracha }}</td>
-                        <td>{{ usuario.senha }}</td>
+                        <td>{{ usuario.username }}</td>
                         <td>
                             <button type="submit" class="btn btn-primary btn-sm">
                                 <i class="fa fa-dot-circle-o"></i> Editar
                             </button>
-                            <a class="btn btn-danger btn-sm" href="{% url 'usuario_delete' usuario.id %}"><i
-                                    class="fa fa-ban"></i> Excluir</a>
+                            <a class="btn btn-danger btn-sm" href="#"><i class="fa fa-ban"></i> Excluir</a>
                     </tr> {% endfor %} </tbody>
             </table>
         </div>

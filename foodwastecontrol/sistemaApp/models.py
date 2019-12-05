@@ -2,13 +2,16 @@ from django.db import models
 
 # Create your models here.
 
-class Usuario(models.Model):
-    nome_completo = models.CharField(max_length=30)
-    numero_cracha = models.CharField(max_length=30)
-    senha = models.CharField(max_length=30)
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    age = models.IntegerField()
+    salary = models.DecimalField(max_digits=5, decimal_places=2)
+    bio = models.TextField()
     
     def __str__(self):
-        return self.nome_completo
+        return self.first_name + ' ' + self.last_name
 
 class Empresa(models.Model):
     nome_fantasia = models.CharField(max_length=30)
@@ -32,7 +35,6 @@ class Refeicao(models.Model):
     data_refeicao = models.DateField(auto_now=False, auto_now_add=False)
     alimento = models.ForeignKey(Alimento, null=True, blank=True, on_delete=models.PROTECT)
     empresa = models.ForeignKey(Empresa, null=True, blank=True, on_delete=models.PROTECT)
-    usuario = models.ForeignKey(Usuario, null=True, blank=True, on_delete=models.PROTECT)
     
 class Desperdicio(models.Model):
     kg_desperdicio_total = models.DecimalField(max_digits=5, decimal_places=2)

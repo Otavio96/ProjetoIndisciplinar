@@ -27,9 +27,9 @@
                         <td>{{ alimento.nome_alimento }}</td>
                         <td>{{ alimento.valor_alimento }}</td>
                         <td>
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Editar
-                            </button>
+                            <a class="btn btn-primary btn-sm" href="{% url 'alimento_update' alimento.id %}"><i
+                                    class="fa fa-dot-circle-o"></i> Editar
+                            </a>
                             <a class="btn btn-danger btn-sm" href="{% url 'alimento_delete' alimento.id %}"><i
                                     class="fa fa-ban"></i> Excluir</a>
                     </tr> {% endfor %} </tbody>

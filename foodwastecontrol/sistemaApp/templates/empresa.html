@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 { load bootstrap }
 
-{% block title %}Lista de Livros{% endblock %}
+{% block title %}Lista de Empresas{% endblock %}
 
 {% block conteudo %}
 
@@ -33,12 +33,11 @@
                         <td>{{ empresa.estado }}</td>
                         <td>{{ empresa.cidade }}</td>
                         <td>
-                            <button type="submit" class="btn btn-primary btn-sm">
-                                <i class="fa fa-dot-circle-o"></i> Editar
-                            </button>
-                            <button type="submit" class="btn btn-danger btn-sm">
-                                <i class="fa fa-ban"></i> Excluir
-                            </button>
+                            <a class="btn btn-primary btn-sm" href="{% url 'empresa_update' empresa.id %}"><i
+                                    class="fa fa-dot-circle-o"></i> Editar
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="{% url 'empresa_delete' empresa.id %}"><i
+                                    class="fa fa-ban"></i> Excluir</a>
                         </td>
                     </tr>
 
